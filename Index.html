@@ -26,12 +26,12 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-weight:300;overflow-x:hidden;cursor:none;}@media(max-width:640px){body{cursor:auto;}.cursor,.cursor-ring{display:none;}}
-
+ 
 /* CURSOR */
 .cursor{position:fixed;width:7px;height:7px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;}
 .cursor-ring{position:fixed;width:34px;height:34px;border:1.5px solid rgba(79,156,249,.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .35s cubic-bezier(.175,.885,.32,1.275);}
 .cursor-ring.expand{transform:translate(-50%,-50%) scale(2);border-color:rgba(79,156,249,.6);background:rgba(79,156,249,.04);}
-
+ 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem 5vw;display:flex;justify-content:space-between;align-items:center;transition:background .4s,border-color .4s;border-bottom:1px solid transparent;}
 nav.scrolled{background:rgba(7,9,13,.94);backdrop-filter:blur(20px);border-bottom-color:var(--border);}
@@ -42,7 +42,7 @@ nav.scrolled{background:rgba(7,9,13,.94);backdrop-filter:blur(20px);border-botto
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transition:transform .2s;}
 .nav-links a:hover{color:var(--accent);}
 .nav-links a:hover::after{transform:scaleX(1);}
-
+ 
 /* HERO */
 #hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
 #canvas-bg{position:absolute;inset:0;z-index:0;}
@@ -66,7 +66,7 @@ h1.hero-title strong{font-weight:700;color:#fff;}
 .scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:fadeIn 1s 1.2s forwards;}
 .scroll-indicator span{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);opacity:.5;}
 .scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(79,156,249,.5),transparent);}
-
+ 
 /* SECTIONS */
 section{padding:9rem 5vw;}
 .section-inner{max-width:1200px;margin:0 auto;}
@@ -74,14 +74,14 @@ section{padding:9rem 5vw;}
 .section-label::before{content:'';width:20px;height:1px;background:var(--accent);}
 .section-title{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;line-height:1.05;margin-bottom:4rem;color:#fff;}
 .section-title em{font-style:normal;color:var(--accent);}
-
+ 
 /* CHIPS */
 .chip{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.06em;padding:.28rem .65rem;border-radius:3px;}
 .chip-blue{background:rgba(79,156,249,.1);border:1px solid rgba(79,156,249,.22);color:var(--accent);}
 .chip-gold{background:rgba(201,168,76,.09);border:1px solid rgba(201,168,76,.22);color:var(--gold);}
 .chip-green{background:rgba(74,222,128,.09);border:1px solid rgba(74,222,128,.22);color:var(--green);}
 .chip-dim{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--muted);}
-
+ 
 /* FEATURED */
 #featured{background:var(--bg2);}
 .featured-card{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface);transition:box-shadow .4s;}
@@ -89,7 +89,8 @@ section{padding:9rem 5vw;}
 .feat-preview{position:relative;background:#0a1520;overflow:hidden;min-height:420px;}
 .feat-preview iframe{width:170%;height:170%;transform:scale(.588) translate(-21%,-21%);border:none;pointer-events:none;}
 .feat-preview-overlay{position:absolute;inset:0;background:linear-gradient(120deg,transparent 50%,var(--surface));}
-.feat-cookie-block{position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,var(--surface) 60%,transparent);z-index:5;pointer-events:none;}
+.feat-cookie-block{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,var(--surface) 70%,transparent);z-index:5;pointer-events:none;}
+@media(max-width:640px){.feat-cookie-block{height:220px;}}
 .feat-badge{position:absolute;top:1.2rem;left:1.2rem;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(79,156,249,.14);border:1px solid rgba(79,156,249,.28);color:var(--accent);padding:.3rem .75rem;border-radius:4px;}
 .feat-body{padding:3rem;}
 .feat-title{font-family:var(--font-display);font-size:2.4rem;font-weight:600;color:#fff;margin-bottom:.3rem;}
@@ -104,7 +105,7 @@ section{padding:9rem 5vw;}
 .chips-row{display:flex;flex-wrap:wrap;gap:.4rem;}
 .feat-link{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:gap .2s;}
 .feat-link:hover{gap:.9rem;}
-
+ 
 /* PROJECTS GRID */
 #projects{background:var(--bg);}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.4rem;}
@@ -116,7 +117,7 @@ section{padding:9rem 5vw;}
 .card-preview-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
 .card-preview.fallback{background:linear-gradient(135deg,#0d1f35,#0a1520);display:flex;align-items:center;justify-content:center;}
 .card-preview.fallback::after{content:'Preview';font-family:var(--font-mono);font-size:.65rem;color:var(--muted);letter-spacing:.1em;}
-
+ 
 /* PROJECT CARD TILT & GLOW */
 .project-card{
   background:var(--surface);border:1px solid var(--border);border-radius:10px;
@@ -134,13 +135,13 @@ section{padding:9rem 5vw;}
 .project-card:hover::before{opacity:1;}
 .project-card .card-body{position:relative;z-index:2;}
 .project-card .card-preview{position:relative;z-index:2;}
-
+ 
 /* Stagger reveal for cards */
 .projects-grid .project-card:nth-child(1){transition-delay:.05s;}
 .projects-grid .project-card:nth-child(2){transition-delay:.15s;}
 .projects-grid .project-card:nth-child(3){transition-delay:.25s;}
 .projects-grid .project-card:nth-child(4){transition-delay:.35s;}
-
+ 
 /* Floating animation for featured */
 .featured-card{animation:floatCard 6s ease-in-out infinite;}
 @keyframes floatCard{
@@ -157,7 +158,7 @@ section{padding:9rem 5vw;}
 .tag{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.06em;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--muted);padding:.22rem .55rem;border-radius:3px;}
 .card-link{font-family:var(--font-mono);font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:.45rem;transition:gap .2s;}
 .card-link:hover{gap:.8rem;}
-
+ 
 /* SKILLS */
 #skills{background:var(--bg2);}
 .skills-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:5rem;}
@@ -172,7 +173,7 @@ section{padding:9rem 5vw;}
 .tool-pill{display:flex;align-items:center;gap:.6rem;padding:.72rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:.8rem;color:var(--muted);transition:border-color .25s,color .25s,transform .25s;}
 .tool-pill:hover{border-color:rgba(79,156,249,.28);color:var(--text);transform:translateY(-2px);}
 .tool-icon{font-size:.9rem;}
-
+ 
 /* EXPERIENCE */
 #experience{background:var(--bg);}
 .timeline{position:relative;max-width:760px;}
@@ -184,7 +185,7 @@ section{padding:9rem 5vw;}
 .tl-company{font-size:.84rem;color:var(--muted);margin-bottom:.9rem;}
 .tl-desc{font-size:.87rem;color:var(--muted);line-height:1.75;margin-bottom:.9rem;}
 .tl-chips{display:flex;flex-wrap:wrap;gap:.4rem;}
-
+ 
 /* EDUCATION */
 #education{background:var(--bg2);}
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
@@ -194,7 +195,7 @@ section{padding:9rem 5vw;}
 .edu-degree{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:#fff;margin-bottom:.3rem;line-height:1.15;}
 .edu-school{font-size:.84rem;color:var(--muted);margin-bottom:1.2rem;}
 .edu-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
-
+ 
 /* CONTACT */
 #contact{background:var(--bg);text-align:center;}
 .contact-inner{max-width:560px;margin:0 auto;}
@@ -202,22 +203,22 @@ section{padding:9rem 5vw;}
 .contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
 .contact-link{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;color:var(--muted);text-decoration:none;font-size:.84rem;transition:all .25s;}
 .contact-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 28px rgba(79,156,249,.12);}
-
+ 
 /* FOOTER */
 footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 .footer-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--muted);}
 .footer-logo em{color:var(--accent);font-style:normal;}
 .footer-copy{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);opacity:.5;}
-
+ 
 /* REVEAL */
 .reveal{opacity:1;transform:none;}
 .js-loaded .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
 .js-loaded .reveal.visible{opacity:1;transform:none;}
-
+ 
 /* KEYFRAMES */
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-
+ 
 /* RESPONSIVE */
 /* HAMBURGER */
 .hamburger{
@@ -232,7 +233,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
+ 
 /* MOBILE DRAWER */
 .nav-drawer{
   display:flex;
@@ -252,7 +253,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   transition:color .2s;
 }
 .nav-drawer a:hover{color:var(--accent);}
-
+ 
 @media(max-width:900px){
   .featured-card{grid-template-columns:1fr;}
   .feat-preview{min-height:240px;}
@@ -282,10 +283,10 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
 </style>
 </head>
 <body>
-
+ 
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
-
+ 
 <!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="logo">Almin <em>Sirbic</em></a>
@@ -300,7 +301,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
     <span></span><span></span><span></span>
   </button>
 </nav>
-
+ 
 <!-- MOBILE DRAWER -->
 <div class="nav-drawer" id="navDrawer">
   <a href="#featured" class="drawer-link">LinkedJobs</a>
@@ -309,7 +310,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   <a href="#experience" class="drawer-link">Erfarenhet</a>
   <a href="#contact" class="drawer-link">Kontakt</a>
 </div>
-
+ 
 <!-- HERO -->
 <section id="hero">
   <canvas id="canvas-bg"></canvas>
@@ -342,7 +343,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
     <div class="scroll-line"></div>
   </div>
 </section>
-
+ 
 <!-- FEATURED: LINKEDJOBS -->
 <section id="featured">
   <div class="section-inner">
@@ -361,7 +362,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
         <p class="feat-desc">
           Komplett jobbplattform byggd från grunden — 8 unika sidor, 70+ dynamiska ortsidor styrda av ett enda wildcard-snippet, automatiska e-postflöden via Brevo API och fullständig teknisk SEO-infrastruktur indexerad i Google.
         </p>
-
+ 
         <div class="stat-row">
           <div class="stat-box">
             <span class="stat-box-num">8</span>
@@ -376,7 +377,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
             <span class="stat-box-lbl">PageSpeed</span>
           </div>
         </div>
-
+ 
         <div class="tech-group">
           <p class="tech-group-title">// Sidor &amp; funktioner</p>
           <div class="chips-row">
@@ -388,7 +389,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
             <span class="chip chip-blue">Brevo listor × 3</span>
           </div>
         </div>
-
+ 
         <div class="tech-group">
           <p class="tech-group-title">// SEO &amp; indexering</p>
           <div class="chips-row">
@@ -400,7 +401,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
             <span class="chip chip-dim">Rank Math Bypass</span>
           </div>
         </div>
-
+ 
         <div class="tech-group">
           <p class="tech-group-title">// Tekniska integrationer</p>
           <div class="chips-row">
@@ -413,20 +414,20 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
             <span class="chip chip-green">SSL / HTTPS</span>
           </div>
         </div>
-
+ 
         <a href="https://www.linkedjobs.se" target="_blank" class="feat-link">Besök LinkedJobs →</a>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-inner">
     <p class="section-label reveal">Webbprojekt</p>
     <h2 class="section-title reveal">Sidor jag <em>byggt</em></h2>
     <div class="projects-grid">
-
+ 
       <div class="project-card reveal">
         <div class="card-preview card-preview-img">
           <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://www.studeravidare.se/" alt="Studeravidare" loading="lazy">
@@ -443,7 +444,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
           <a href="https://www.studeravidare.se" target="_blank" class="card-link">Besök sidan →</a>
         </div>
       </div>
-
+ 
       <div class="project-card reveal">
         <div class="card-preview card-preview-img">
           <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://www.tvattkliniken.se/" alt="Tvättkliniken" loading="lazy">
@@ -460,7 +461,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
           <a href="https://www.tvattkliniken.se" target="_blank" class="card-link">Besök sidan →</a>
         </div>
       </div>
-
+ 
       <div class="project-card reveal">
         <div class="card-preview card-preview-img">
           <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://feelbetterinstitute.com/" alt="Feel Better Institute preview" loading="lazy" onerror="this.parentElement.classList.add('fallback')"/>
@@ -477,7 +478,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
           <a href="https://www.feelbetterinstitute.com" target="_blank" class="card-link">Besök sidan →</a>
         </div>
       </div>
-
+ 
       <div class="project-card reveal">
         <div class="card-preview card-preview-img">
           <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://hivegrove.com/" alt="Hivegrove preview" loading="lazy" onerror="this.parentElement.classList.add('fallback')"/>
@@ -494,18 +495,18 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
           <a href="https://www.hivegrove.com" target="_blank" class="card-link">Besök sidan →</a>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
     <p class="section-label reveal">Teknisk kompetens</p>
     <h2 class="section-title reveal">Verktyg &amp; <em>tekniker</em></h2>
     <div class="skills-wrapper">
-
+ 
       <div>
         <div class="skill-category reveal">
           <p class="skill-cat-title">Frontend</p>
@@ -539,7 +540,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
           <div class="skill-row"><span class="skill-name">Shopify / Liquid</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="82"></div></div></div>
         </div>
       </div>
-
+ 
       <div>
         <div class="reveal" style="margin-bottom:2.5rem;">
           <p class="skill-cat-title">Node.js Ekosystem</p>
@@ -587,18 +588,18 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
           </div>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-inner">
     <p class="section-label reveal">IT-erfarenhet</p>
     <h2 class="section-title reveal">Vad jag <em>gjort</em></h2>
     <div class="timeline">
-
+ 
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <p class="tl-period">2022 – Pågående</p>
@@ -620,7 +621,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
           <span class="chip chip-dim">GA4</span>
         </div>
       </div>
-
+ 
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <p class="tl-period">2021 – 2023</p>
@@ -641,11 +642,11 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
           <span class="chip chip-dim">SQL</span>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-inner">
@@ -671,7 +672,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
@@ -692,24 +693,24 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Almin <em>Sirbic</em></span>
   <span class="footer-copy">© 2025 · Frontend Developer · Göteborg</span>
 </footer>
-
+ 
 <!-- THREE.JS -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   const canvas = document.getElementById('canvas-bg');
   const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-
+ 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, .1, 100);
   camera.position.z = 4;
-
+ 
   function resize(){
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth/window.innerHeight;
@@ -717,7 +718,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   }
   resize();
   window.addEventListener('resize', resize);
-
+ 
   // Particles
   const N = 2000;
   const pos = new Float32Array(N*3);
@@ -736,7 +737,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   geo.setAttribute('color',    new THREE.BufferAttribute(col,3));
   const mat = new THREE.PointsMaterial({size:.038,vertexColors:true,transparent:true,opacity:.75,sizeAttenuation:true});
   scene.add(new THREE.Points(geo, mat));
-
+ 
   // Torus wireframe
   const torus = new THREE.Mesh(
     new THREE.TorusGeometry(1.9,.45,14,60),
@@ -744,7 +745,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   );
   torus.rotation.x = Math.PI*.28;
   scene.add(torus);
-
+ 
   // Icosahedron
   const ico = new THREE.Mesh(
     new THREE.IcosahedronGeometry(1.1,1),
@@ -752,7 +753,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   );
   ico.position.set(2.8,.4,-2);
   scene.add(ico);
-
+ 
   // Octahedron
   const oct = new THREE.Mesh(
     new THREE.OctahedronGeometry(.8,0),
@@ -760,13 +761,13 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   );
   oct.position.set(-3,-.5,-1.5);
   scene.add(oct);
-
+ 
   let mx=0,my=0;
   window.addEventListener('mousemove',e=>{
     mx=(e.clientX/window.innerWidth-.5)*2;
     my=(e.clientY/window.innerHeight-.5)*2;
   });
-
+ 
   const pts = scene.children[0];
   const clock = new THREE.Clock();
   (function animate(){
@@ -787,7 +788,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   })();
 })();
 </script>
-
+ 
 <!-- CURSOR -->
 <script>
 (function(){
@@ -807,24 +808,24 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   });
 })();
 </script>
-
+ 
 <!-- SCROLL & REVEAL -->
 <script>
 (function(){
   // Add js-loaded so CSS animations only activate when JS works
   document.documentElement.classList.add('js-loaded');
-
+ 
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
-
+ 
   const revealEls = document.querySelectorAll('.reveal');
-
+ 
   // Fallback: if IntersectionObserver never fires, show everything after 1.5s
   const fallbackTimer = setTimeout(()=>{
     revealEls.forEach(el=>el.classList.add('visible'));
     document.querySelectorAll('.skill-bar').forEach(b=>{b.style.width=b.dataset.width+'%';});
   }, 1500);
-
+ 
   if('IntersectionObserver' in window){
     const io = new IntersectionObserver(entries=>{
       entries.forEach(e=>{
@@ -836,7 +837,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
       });
     },{threshold:0.05, rootMargin:'0px 0px -30px 0px'});
     revealEls.forEach(el=>io.observe(el));
-
+ 
     const barIO = new IntersectionObserver(entries=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
@@ -853,7 +854,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   }
 })();
 </script>
-
+ 
 <!-- 3D TILT ON PROJECT CARDS -->
 <script>
 (function(){
@@ -893,7 +894,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   }
 })();
 </script>
-
+ 
 <!-- HAMBURGER MENU -->
 <script>
 (function(){
@@ -914,6 +915,6 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
   drawer.querySelectorAll('.drawer-link').forEach(a => a.addEventListener('click', closeMenu));
 })();
 </script>
-
+ 
 </body>
 </html>
