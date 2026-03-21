@@ -89,6 +89,22 @@ section{padding:9rem 5vw;}
 .feat-preview{position:relative;background:#0a1520;overflow:hidden;min-height:420px;}
 .feat-preview iframe{width:170%;height:170%;transform:scale(.588) translate(-21%,-21%);border:none;pointer-events:none;}
 .feat-preview-overlay{position:absolute;inset:0;background:linear-gradient(120deg,transparent 50%,var(--surface));}
+.feat-mobile-img{
+  display:none;width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+  position:absolute;inset:0;
+  animation:slowZoom 8s ease-in-out infinite alternate;
+}
+@keyframes slowZoom{
+  0%{transform:scale(1) translateY(0);}
+  100%{transform:scale(1.08) translateY(-2%);}
+}
+@media(max-width:900px){
+  .feat-preview iframe{display:none;}
+  .feat-cookie-block{display:none;}
+  .feat-mobile-img{display:block;}
+  .feat-preview-overlay{background:linear-gradient(to bottom,transparent 30%,var(--surface));}
+}
 .feat-cookie-block{position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,var(--surface) 80%,transparent);z-index:5;pointer-events:none;}
 @media(max-width:640px){.feat-cookie-block{height:100px;}}
 .feat-badge{position:absolute;top:1.2rem;left:1.2rem;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(79,156,249,.14);border:1px solid rgba(79,156,249,.28);color:var(--accent);padding:.3rem .75rem;border-radius:4px;}
@@ -147,6 +163,13 @@ section{padding:9rem 5vw;}
 @keyframes floatCard{
   0%,100%{box-shadow:0 8px 32px rgba(0,0,0,.3),0 0 0 1px rgba(79,156,249,.04);}
   50%{box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px rgba(79,156,249,.1);}
+}
+.card-name-overlay{
+  position:absolute;bottom:1rem;left:1.2rem;z-index:4;
+  font-family:var(--font-display);font-size:1.4rem;font-weight:600;
+  color:#fff;letter-spacing:.02em;
+  text-shadow:0 2px 12px rgba(0,0,0,.8);
+  pointer-events:none;
 }
 .card-type{position:absolute;top:.9rem;right:.9rem;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(79,156,249,.12);border:1px solid rgba(79,156,249,.22);color:var(--accent);padding:.28rem .65rem;border-radius:3px;z-index:3;}
 .card-type.shopify{background:rgba(74,222,128,.1);border-color:rgba(74,222,128,.2);color:var(--green);}
@@ -352,6 +375,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
     <div class="featured-card reveal">
       <div class="feat-preview">
         <iframe src="https://www.linkedjobs.se" title="LinkedJobs" loading="lazy"></iframe>
+        <img class="feat-mobile-img" src="https://image.thum.io/get/width/900/crop/600/noanimate/https://www.linkedjobs.se/" alt="LinkedJobs preview" loading="lazy">
         <div class="feat-preview-overlay"></div>
         <div class="feat-cookie-block"></div>
         <span class="feat-badge">WordPress · Live</span>
@@ -447,8 +471,9 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
  
       <div class="project-card reveal">
         <div class="card-preview card-preview-img">
-          <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://www.tvattkliniken.se/" alt="Tvättkliniken" loading="lazy">
+          <img src="https://image.thum.io/get/width/1200/crop/500/noanimate/https://www.tvattkliniken.se/" alt="Tvättkliniken" loading="lazy">
           <div class="card-preview-overlay"></div>
+          <div class="card-name-overlay">Tvättkliniken</div>
           <span class="card-type">WordPress</span>
         </div>
         <div class="card-body">
