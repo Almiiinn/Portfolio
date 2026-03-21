@@ -93,11 +93,15 @@ section{padding:9rem 5vw;}
   display:none;width:100%;height:100%;
   object-fit:cover;object-position:top center;
   position:absolute;inset:0;
-  animation:slowZoom 8s ease-in-out infinite alternate;
+  animation:tilt3D 6s ease-in-out infinite alternate;
+  transform-style:preserve-3d;
+  border-radius:8px;
 }
-@keyframes slowZoom{
-  0%{transform:scale(1) translateY(0);}
-  100%{transform:scale(1.08) translateY(-2%);}
+@keyframes tilt3D{
+  0%  {transform:perspective(600px) rotateY(-8deg) rotateX(4deg) scale(1.04);}
+  33% {transform:perspective(600px) rotateY(6deg) rotateX(-3deg) scale(1.06);}
+  66% {transform:perspective(600px) rotateY(-4deg) rotateX(5deg) scale(1.03);}
+  100%{transform:perspective(600px) rotateY(8deg) rotateX(-4deg) scale(1.05);}
 }
 @media(max-width:900px){
   .feat-preview iframe{display:none;}
@@ -368,7 +372,7 @@ footer{padding:2.2rem 5vw;border-top:1px solid var(--border);display:flex;justif
     <div class="featured-card reveal">
       <div class="feat-preview">
         <iframe src="https://www.linkedjobs.se" title="LinkedJobs" loading="lazy"></iframe>
-        <img class="feat-mobile-img" src="https://image.thum.io/get/width/900/crop/600/noanimate/https://www.linkedjobs.se/" alt="LinkedJobs preview" loading="lazy">
+        <img class="feat-mobile-img" src="https://image.thum.io/get/width/1400/crop/900/noanimate/https://www.linkedjobs.se/" alt="LinkedJobs preview" loading="lazy">
         <div class="feat-preview-overlay"></div>
         <div class="feat-cookie-block"></div>
         <span class="feat-badge">WordPress · Live</span>
