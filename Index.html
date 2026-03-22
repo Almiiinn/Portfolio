@@ -494,50 +494,43 @@ footer{
         </div>
         <a href="https://www.linkedjobs.se" target="_blank" rel="noopener" class="feat-link" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">Besök LinkedJobs <span>→</span></a>
       </div>
-      <div class="feat-preview" style="
+      <div style="
           width:100%;
-          aspect-ratio:3/4;
+          aspect-ratio:16/10;
           overflow:hidden;
           position:relative;
           border-radius:8px;
           border:1px solid rgba(79,156,249,.2);
           background:#07090d;
         ">
-        <!-- iframe scaled to show ONLY video hero at top, cookie falls outside clip -->
+        <iframe
+          src="https://www.linkedjobs.se"
+          title="LinkedJobs live"
+          loading="lazy"
+          scrolling="no"
+          style="
+            position:absolute;
+            top:0; left:0;
+            width:1440px;
+            height:900px;
+            transform-origin:top left;
+            transform:scale(var(--ifscale,0.38));
+            border:none;
+            pointer-events:none;
+          "
+        ></iframe>
+        <!-- hard mask: hides cookie banner (appears ~55% down the scaled page) -->
         <div style="
             position:absolute;
-            top:0;left:0;
-            width:100%;
-            height:50%;
-            overflow:hidden;
-        ">
-          <iframe
-            src="https://www.linkedjobs.se"
-            title="LinkedJobs live"
-            loading="lazy"
-            style="
-              width:170%;
-              height:350%;
-              transform:scale(.588) translate(-21%,-21%);
-              border:none;
-              pointer-events:none;
-              display:block;
-            "
-          ></iframe>
-        </div>
-        <!-- gradient fade from video into dark -->
-        <div style="
-            position:absolute;
-            top:38%;left:0;right:0;height:20%;
-            background:linear-gradient(to bottom,transparent,#07090d);
-            pointer-events:none;z-index:2;
-        "></div>
-        <!-- dark bottom half -->
-        <div style="
-            position:absolute;
-            top:55%;left:0;right:0;bottom:0;
+            top:58%; left:0; right:0; bottom:0;
             background:#07090d;
-            pointer-events:none;z-index:2;
+            z-index:3;pointer-events:none;
+        "></div>
+        <div style="
+            position:absolute;
+            top:44%; left:0; right:0; height:18%;
+            background:linear-gradient(to bottom,transparent,#07090d);
+            z-index:3;pointer-events:none;
         "></div>
       </div>
  
@@ -1022,6 +1015,22 @@ document.querySelectorAll('.reveal,.skill-bar-row').forEach(function(el){io.obse
     camera.aspect=W/H;camera.updateProjectionMatrix();
     renderer.setSize(W,H);
   });
+})();
+ 
+// Responsive iframe scale for LinkedJobs preview
+(function(){
+  function setScale(){
+    var el = document.querySelector('[title="LinkedJobs live"]');
+    if(!el) return;
+    var container = el.parentElement;
+    var w = container.offsetWidth;
+    var scale = w / 1440;
+    el.style.transform = 'scale(' + scale + ')';
+    el.style.height = (container.offsetHeight / scale) + 'px';
+  }
+  setScale();
+  window.addEventListener('resize', setScale);
+  window.addEventListener('load', setScale);
 })();
 </script>
 </body>
