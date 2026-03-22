@@ -374,6 +374,30 @@ footer{
     linear-gradient(90deg,rgba(79,156,249,.03) 1px,transparent 1px);
   background-size:60px 60px;
 }
+ 
+/* ── MOBILE ONLY FIXES ── */
+@media(max-width:640px){
+ 
+  /* LinkedJobs live preview - smaller on mobile */
+  .feat-preview-live{
+    width:100% !important;
+    height:320px !important;
+  }
+ 
+  /* Skills layout - center tools section on mobile */
+  .tools-section{
+    margin-top:2.5rem;
+  }
+  .tool-group{
+    text-align:left;
+  }
+  .tool-pills{
+    justify-content:flex-start;
+  }
+  .skills-layout{
+    gap:1.5rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -494,7 +518,7 @@ footer{
         </div>
         <a href="https://www.linkedjobs.se" target="_blank" rel="noopener" class="feat-link" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">Besök LinkedJobs <span>→</span></a>
       </div>
-      <div style="width:420px;max-width:100%;height:700px;overflow:hidden;position:relative;border-radius:10px;border:1px solid rgba(79,156,249,.25);flex-shrink:0;">
+      <div class="feat-preview-live" style="width:420px;max-width:100%;height:700px;overflow:hidden;position:relative;border-radius:10px;border:1px solid rgba(79,156,249,.25);flex-shrink:0;">
         <iframe
           src="https://www.linkedjobs.se"
           title="LinkedJobs live"
