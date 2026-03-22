@@ -234,7 +234,8 @@ section{padding:6rem 0;}
 }
  
 /* ── PROJECTS ── */
-.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+@media(max-width:1000px){.projects-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:700px){.projects-grid{grid-template-columns:1fr;}}
 .project-card{
   border:1px solid var(--border);border-radius:8px;overflow:hidden;
@@ -277,19 +278,35 @@ section{padding:6rem 0;}
 .skill-cat{margin-bottom:2.5rem;}
 .tools-section{margin-top:0;}
 .tools-section .section-sub{
-  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.18em;
-  text-transform:uppercase;color:#c9a84c;margin-bottom:1.2rem;
-  padding-bottom:.5rem;border-bottom:1px solid var(--border);
+  font-family:var(--font-mono);font-size:.65rem;letter-spacing:.2em;
+  text-transform:uppercase;color:#c9a84c;margin-bottom:1.8rem;
+  padding-bottom:.7rem;border-bottom:1px solid rgba(201,168,76,.2);
+  display:flex;align-items:center;gap:.8rem;
 }
-.tool-group{margin-bottom:1.5rem;}
+.tools-section .section-sub::before{
+  content:"//";opacity:.6;
+}
+.tool-group{margin-bottom:2rem;}
 .tool-group-title{
-  font-family:var(--font-mono);font-size:.6rem;letter-spacing:.14em;
-  text-transform:uppercase;color:#5a6a7e;margin-bottom:.6rem;
+  font-family:var(--font-mono);font-size:.6rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#8a99aa;margin-bottom:.8rem;
+  display:flex;align-items:center;gap:.6rem;
 }
-.tool-pills{display:flex;flex-wrap:wrap;gap:.4rem;}
+.tool-group-title::after{
+  content:"";flex:1;height:1px;background:rgba(255,255,255,.06);
+}
+.tool-pills{display:flex;flex-wrap:wrap;gap:.5rem;}
 .tool-pill{
-  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.06em;
-  color:#5a6a7e;padding:.3rem .75rem;border:1px solid var(--border);border-radius:3px;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.05em;
+  color:#bbc8da;padding:.45rem 1rem;
+  border:1px solid rgba(255,255,255,.1);border-radius:4px;
+  background:rgba(255,255,255,.03);
+  transition:border-color .2s,color .2s,background .2s;
+  cursor:default;
+}
+.tool-pill:hover{
+  border-color:rgba(79,156,249,.4);color:#4f9cf9;
+  background:rgba(79,156,249,.06);
 }
  
 /* ── EXPERIENCE ── */
@@ -491,6 +508,27 @@ footer{
     <span class="section-label" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">// Projekt</span>
     <h2 class="section-title" style="color:#fff;-webkit-text-fill-color:#fff;">Sidor jag <em style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">byggt</em></h2>
     <div class="projects-grid">
+      <!-- LinkedJobs -->
+      <div class="project-card reveal">
+        <div class="card-preview">
+          <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://www.linkedjobs.se/" alt="LinkedJobs" loading="lazy">
+          <div class="card-preview-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title" style="color:#fff;-webkit-text-fill-color:#fff;">LinkedJobs</h3>
+          <a href="https://www.linkedjobs.se" target="_blank" rel="noopener" class="card-url" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">linkedjobs.se</a>
+          <p class="card-desc" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">LinkedIn-plattform med 8 live-sidor och 70+ dynamiska ortsidor via wildcard-snippet. Fullständig teknisk SEO, Brevo API, reCAPTCHA v3 och indexerad i Google med PageSpeed 94.</p>
+          <div class="card-chips">
+            <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">WordPress</span>
+            <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Brevo API</span>
+            <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Schema Markup</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">SEO</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Zapier</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">reCAPTCHA v3</span>
+          </div>
+          <a href="https://www.linkedjobs.se" target="_blank" rel="noopener" class="card-link" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">Besök sidan <span>→</span></a>
+        </div>
+      </div>
       <!-- Studeravidare -->
       <div class="project-card reveal">
         <div class="card-preview">
@@ -658,42 +696,42 @@ footer{
       <div class="tools-section">
         <p class="section-sub" style="color:#c9a84c;-webkit-text-fill-color:#c9a84c;">Plattformar &amp; Verktyg</p>
         <div class="tool-group">
-          <p class="tool-group-title" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">CMS &amp; E-handel</p>
+          <p class="tool-group-title">CMS &amp; E-handel</p>
           <div class="tool-pills">
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">WordPress</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Elementor</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Shopify / Liquid</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">WooCommerce</span>
+            <span class="tool-pill">WordPress</span>
+            <span class="tool-pill">Elementor</span>
+            <span class="tool-pill">Shopify / Liquid</span>
+            <span class="tool-pill">WooCommerce</span>
           </div>
         </div>
         <div class="tool-group">
-          <p class="tool-group-title" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">API &amp; Integrationer</p>
+          <p class="tool-group-title">API &amp; Integrationer</p>
           <div class="tool-pills">
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Brevo API</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Zapier</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">reCAPTCHA v3</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">DKIM / DMARC</span>
+            <span class="tool-pill">Brevo API</span>
+            <span class="tool-pill">Zapier</span>
+            <span class="tool-pill">reCAPTCHA v3</span>
+            <span class="tool-pill">DKIM / DMARC</span>
           </div>
         </div>
         <div class="tool-group">
-          <p class="tool-group-title" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">SEO &amp; Analytics</p>
+          <p class="tool-group-title">SEO &amp; Analytics</p>
           <div class="tool-pills">
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Google Analytics (GA4)</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Search Console</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Schema Markup</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Rank Math</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">CookieYes</span>
+            <span class="tool-pill">Google Analytics (GA4)</span>
+            <span class="tool-pill">Search Console</span>
+            <span class="tool-pill">Schema Markup</span>
+            <span class="tool-pill">Rank Math</span>
+            <span class="tool-pill">CookieYes</span>
           </div>
         </div>
         <div class="tool-group">
-          <p class="tool-group-title" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Övrigt</p>
+          <p class="tool-group-title">Övrigt</p>
           <div class="tool-pills">
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Power BI</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Excel / Pivot</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Oracle / MSCA</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">MS Dynamics</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Netlify</span>
-            <span class="tool-pill" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Three.js</span>
+            <span class="tool-pill">Power BI</span>
+            <span class="tool-pill">Excel / Pivot</span>
+            <span class="tool-pill">Oracle / MSCA</span>
+            <span class="tool-pill">MS Dynamics</span>
+            <span class="tool-pill">Netlify</span>
+            <span class="tool-pill">Three.js</span>
           </div>
         </div>
       </div>
