@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almin Sirbic — Frontend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#hero" class="logo">
+    <span class="logo-almin" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">Almin</span>
+    <span class="logo-sirbic" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;"> Sirbic</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#featured" data-nav style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;text-decoration:none;">LinkedJobs</a></li>
+    <li><a href="#projects" data-nav style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;text-decoration:none;">Projekt</a></li>
+    <li><a href="#skills" data-nav style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;text-decoration:none;">Kompetens</a></li>
+    <li><a href="#experience" data-nav style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;text-decoration:none;">Erfarenhet</a></li>
+    <li><a href="#contact" data-nav style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;text-decoration:none;">Kontakt</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Meny" onclick="toggleDrawer()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- DRAWER -->
+<nav class="nav-drawer" id="drawer">
+  <a href="#featured" class="drawer-link" onclick="closeDrawer()" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;text-decoration:none;">LinkedJobs</a>
+  <a href="#projects" class="drawer-link" onclick="closeDrawer()" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;text-decoration:none;">Projekt</a>
+  <a href="#skills" class="drawer-link" onclick="closeDrawer()" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;text-decoration:none;">Kompetens</a>
+  <a href="#experience" class="drawer-link" onclick="closeDrawer()" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;text-decoration:none;">Erfarenhet</a>
+  <a href="#contact" class="drawer-link" onclick="closeDrawer()" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;text-decoration:none;">Kontakt</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <p class="hero-label" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">Frontend Developer &amp; Web Builder</p>
+    <h1 class="hero-name" style="color:#fff;-webkit-text-fill-color:#fff;">
+      Almin<strong>Sirbic</strong>
+    </h1>
+    <p class="hero-sub" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Responsiva webbplatser &amp; digitala lösningar</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary" style="color:#07090d;-webkit-text-fill-color:#07090d;text-decoration:none;background:#4f9cf9;">SE MINA PROJEKT</a>
+      <a href="#contact" class="btn btn-outline" style="color:#8a99aa;-webkit-text-fill-color:#8a99aa;text-decoration:none;border:1px solid rgba(255,255,255,.15);">KONTAKTA MIG</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num" style="color:#fff;-webkit-text-fill-color:#fff;">4+</span>
+        <span class="hero-stat-lbl" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Års erfarenhet</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" style="color:#fff;-webkit-text-fill-color:#fff;">5+</span>
+        <span class="hero-stat-lbl" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Live-projekt</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" style="color:#fff;-webkit-text-fill-color:#fff;">20+</span>
+        <span class="hero-stat-lbl" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Tekniker</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- FEATURED: LinkedJobs -->
+<section id="featured">
+  <div class="container">
+    <div class="feat-grid reveal">
+      <div class="feat-body">
+        <span class="feat-badge" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">Utvalt Projekt</span>
+        <h2 class="feat-title" style="color:#fff;-webkit-text-fill-color:#fff;">LinkedJobs</h2>
+        <a href="https://www.linkedjobs.se" target="_blank" rel="noopener" class="feat-url" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">linkedjobs.se</a>
+        <p class="feat-desc" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">
+          LinkedIn-plattform med 8 live-sidor och 70+ dynamiska ortsidor genererade via wildcard-snippet. Fullständig teknisk SEO-infrastruktur, automatiska e-postflöden via Brevo API och indexerad i Google.
+        </p>
+        <div class="feat-stats">
+          <div>
+            <span class="feat-stat-val" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">8</span>
+            <span class="feat-stat-lbl" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Live-sidor</span>
+          </div>
+          <div>
+            <span class="feat-stat-val" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">70+</span>
+            <span class="feat-stat-lbl" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Ortsidor</span>
+          </div>
+          <div>
+            <span class="feat-stat-val" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">94</span>
+            <span class="feat-stat-lbl" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">PageSpeed</span>
+          </div>
+        </div>
+        <div class="chip-group">
+          <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Video-hero</span>
+          <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Orter-ticker</span>
+          <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Wildcard-snippet</span>
+          <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">FAQ Accordion</span>
+          <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Formulär × 4</span>
+          <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Brevo listor × 3</span>
+        </div>
+        <div class="chip-group">
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Egna meta-taggar</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Schema Markup</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Sitemap (81 sidor)</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Search Console</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Canonical URL</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Rank Math Bypass</span>
+        </div>
+        <div class="chip-group">
+          <span class="chip chip-green" style="color:#4ade80;-webkit-text-fill-color:#4ade80;border-color:rgba(74,222,128,.4);">Brevo API (DKIM/DMARC)</span>
+          <span class="chip chip-green" style="color:#4ade80;-webkit-text-fill-color:#4ade80;border-color:rgba(74,222,128,.4);">Zapier</span>
+          <span class="chip chip-green" style="color:#4ade80;-webkit-text-fill-color:#4ade80;border-color:rgba(74,222,128,.4);">reCAPTCHA v3</span>
+          <span class="chip chip-green" style="color:#4ade80;-webkit-text-fill-color:#4ade80;border-color:rgba(74,222,128,.4);">Google Analytics</span>
+          <span class="chip chip-green" style="color:#4ade80;-webkit-text-fill-color:#4ade80;border-color:rgba(74,222,128,.4);">CookieYes</span>
+        </div>
+        <a href="https://www.linkedjobs.se" target="_blank" rel="noopener" class="feat-link" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">Besök LinkedJobs <span>→</span></a>
+      </div>
+      <div class="feat-preview-live" style="width:420px;max-width:100%;height:700px;overflow:hidden;position:relative;border-radius:10px;border:1px solid rgba(79,156,249,.25);flex-shrink:0;">
+        <iframe
+          src="https://www.linkedjobs.se"
+          title="LinkedJobs live"
+          loading="lazy"
+          scrolling="no"
+          style="position:absolute;top:0;left:0;width:800px;height:2600px;transform-origin:top left;transform:scale(0.525);border:none;pointer-events:none;"
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <span class="section-label" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">// Projekt</span>
+    <h2 class="section-title" style="color:#fff;-webkit-text-fill-color:#fff;">Sidor jag <em style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">byggt</em></h2>
+    <div class="projects-grid">
+      <!-- LinkedJobs -->
+      <div class="project-card reveal">
+        <div class="card-preview">
+          <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://www.linkedjobs.se/" alt="LinkedJobs" loading="lazy">
+          <div class="card-preview-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title" style="color:#fff;-webkit-text-fill-color:#fff;">LinkedJobs</h3>
+          <a href="https://www.linkedjobs.se" target="_blank" rel="noopener" class="card-url" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">linkedjobs.se</a>
+          <p class="card-desc" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">LinkedIn-plattform med 8 live-sidor och 70+ dynamiska ortsidor via wildcard-snippet. Fullständig teknisk SEO, Brevo API, reCAPTCHA v3 och indexerad i Google med PageSpeed 94.</p>
+          <div class="card-chips">
+            <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">WordPress</span>
+            <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Brevo API</span>
+            <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Schema Markup</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">SEO</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Zapier</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">reCAPTCHA v3</span>
+          </div>
+          <a href="https://www.linkedjobs.se" target="_blank" rel="noopener" class="card-link" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">Besök sidan <span>→</span></a>
+        </div>
+      </div>
+      <!-- Studeravidare -->
+      <div class="project-card reveal">
+        <div class="card-preview">
+          <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://www.studeravidare.se/" alt="Studeravidare" loading="lazy">
+          <div class="card-preview-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title" style="color:#fff;-webkit-text-fill-color:#fff;">Studeravidare</h3>
+          <a href="https://www.studeravidare.se" target="_blank" rel="noopener" class="card-url" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">studeravidare.se</a>
+          <p class="card-desc" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Responsiv informationssajt med modern design. Byggt med WordPress och Elementor med API-integrationer och löpande teknisk förvaltning.</p>
+          <div class="card-chips">
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">WordPress</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Elementor</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">HTML/CSS</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">JavaScript</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">REST API</span>
+          </div>
+          <a href="https://www.studeravidare.se" target="_blank" rel="noopener" class="card-link" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">Besök sidan <span>→</span></a>
+        </div>
+      </div>
+      <!-- Tvättkliniken -->
+      <div class="project-card reveal">
+        <div class="card-preview">
+          <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://www.tvattkliniken.se/" alt="Tvättkliniken" loading="lazy">
+          <div class="card-preview-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title" style="color:#fff;-webkit-text-fill-color:#fff;">Tvättkliniken</h3>
+          <a href="https://www.tvattkliniken.se" target="_blank" rel="noopener" class="card-url" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">tvattkliniken.se</a>
+          <p class="card-desc" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Professionell hemsida för tvätteritjänster med bokningssystem och kontaktformulär. Responsiv design med WordPress och Elementor.</p>
+          <div class="card-chips">
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">WordPress</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Elementor</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">HTML/CSS</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">SEO</span>
+          </div>
+          <a href="https://www.tvattkliniken.se" target="_blank" rel="noopener" class="card-link" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">Besök sidan <span>→</span></a>
+        </div>
+      </div>
+      <!-- Feel Better Institute -->
+      <div class="project-card reveal">
+        <div class="card-preview">
+          <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://feelbetterinstitute.com/" alt="Feel Better Institute" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#0d1f35,#0a1520)'">
+          <div class="card-preview-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title" style="color:#fff;-webkit-text-fill-color:#fff;">Feel Better Institute</h3>
+          <a href="https://feelbetterinstitute.com" target="_blank" rel="noopener" class="card-url" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">feelbetterinstitute.com</a>
+          <p class="card-desc" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Shopify-butik för hälsoprodukter med anpassad Liquid-kod, produktfiltrering och optimerad kundresa.</p>
+          <div class="card-chips">
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Shopify</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Liquid</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">JavaScript</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">CSS</span>
+          </div>
+          <a href="https://feelbetterinstitute.com" target="_blank" rel="noopener" class="card-link" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">Besök sidan <span>→</span></a>
+        </div>
+      </div>
+      <!-- Hivegrove -->
+      <div class="project-card reveal">
+        <div class="card-preview">
+          <img src="https://image.thum.io/get/width/800/crop/500/noanimate/https://hivegrove.com/" alt="Hivegrove" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#0d1f35,#0a1520)'">
+          <div class="card-preview-overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title" style="color:#fff;-webkit-text-fill-color:#fff;">Hivegrove</h3>
+          <a href="https://hivegrove.com" target="_blank" rel="noopener" class="card-url" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">hivegrove.com</a>
+          <p class="card-desc" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Shopify-butik med anpassad Liquid-templating, produktsidor och integrerad betalningslösning för internationell e-handel.</p>
+          <div class="card-chips">
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Shopify</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Liquid</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">JavaScript</span>
+            <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">CSS</span>
+          </div>
+          <a href="https://hivegrove.com" target="_blank" rel="noopener" class="card-link" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">Besök sidan <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <span class="section-label" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">// Kompetens</span>
+    <h2 class="section-title" style="color:#fff;-webkit-text-fill-color:#fff;">Verktyg &amp; <em style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">Tekniker</em></h2>
+    <div class="skills-layout">
+      <!-- Left: skill bars -->
+      <div>
+        <div class="skill-cat">
+          <p class="skill-cat-title" style="color:#c9a84c;-webkit-text-fill-color:#c9a84c;">Frontend</p>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">HTML / CSS</span>
+            <div class="skill-track"><div class="skill-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">JavaScript</span>
+            <div class="skill-track"><div class="skill-fill" style="width:88%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">TypeScript</span>
+            <div class="skill-track"><div class="skill-fill" style="width:75%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">React / Next.js</span>
+            <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">Vue.js / Nuxt.js</span>
+            <div class="skill-track"><div class="skill-fill" style="width:75%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">Angular</span>
+            <div class="skill-track"><div class="skill-fill" style="width:65%"></div></div>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <p class="skill-cat-title" style="color:#c9a84c;-webkit-text-fill-color:#c9a84c;">Backend &amp; Runtime</p>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">Node.js</span>
+            <div class="skill-track"><div class="skill-fill" style="width:78%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">Express.js</span>
+            <div class="skill-track"><div class="skill-fill" style="width:72%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">REST API / GraphQL</span>
+            <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">Java</span>
+            <div class="skill-track"><div class="skill-fill" style="width:65%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">.NET &amp; C#</span>
+            <div class="skill-track"><div class="skill-fill" style="width:60%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">Python</span>
+            <div class="skill-track"><div class="skill-fill" style="width:58%"></div></div>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <p class="skill-cat-title" style="color:#c9a84c;-webkit-text-fill-color:#c9a84c;">Databaser &amp; DevOps</p>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">SQL / MySQL</span>
+            <div class="skill-track"><div class="skill-fill" style="width:70%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">MongoDB / NoSQL</span>
+            <div class="skill-track"><div class="skill-fill" style="width:65%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">Git / GitHub</span>
+            <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-bar-row reveal">
+            <span class="skill-name" style="color:#dde4ee;-webkit-text-fill-color:#dde4ee;">npm / Webpack / Vite</span>
+            <div class="skill-track"><div class="skill-fill" style="width:75%"></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: tools & platforms -->
+      <div class="tools-section">
+        <p class="section-sub" style="color:#c9a84c;-webkit-text-fill-color:#c9a84c;">Plattformar &amp; Verktyg</p>
+        <div class="tool-group">
+          <p class="tool-group-title">CMS &amp; E-handel</p>
+          <div class="tool-pills">
+            <span class="tool-pill">WordPress</span>
+            <span class="tool-pill">Elementor</span>
+            <span class="tool-pill">Shopify / Liquid</span>
+            <span class="tool-pill">WooCommerce</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <p class="tool-group-title">API &amp; Integrationer</p>
+          <div class="tool-pills">
+            <span class="tool-pill">Brevo API</span>
+            <span class="tool-pill">Zapier</span>
+            <span class="tool-pill">reCAPTCHA v3</span>
+            <span class="tool-pill">DKIM / DMARC</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <p class="tool-group-title">SEO &amp; Analytics</p>
+          <div class="tool-pills">
+            <span class="tool-pill">Google Analytics (GA4)</span>
+            <span class="tool-pill">Search Console</span>
+            <span class="tool-pill">Schema Markup</span>
+            <span class="tool-pill">Rank Math</span>
+            <span class="tool-pill">CookieYes</span>
+          </div>
+        </div>
+        <div class="tool-group">
+          <p class="tool-group-title">Övrigt</p>
+          <div class="tool-pills">
+            <span class="tool-pill">Power BI</span>
+            <span class="tool-pill">Excel / Pivot</span>
+            <span class="tool-pill">Oracle / MSCA</span>
+            <span class="tool-pill">MS Dynamics</span>
+            <span class="tool-pill">Netlify</span>
+            <span class="tool-pill">Three.js</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <span class="section-label" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">// Erfarenhet</span>
+    <h2 class="section-title" style="color:#fff;-webkit-text-fill-color:#fff;">Vad jag <em style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">gjort</em></h2>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-glow"></div>
+        <div class="tl-item-inner">
+        <p class="tl-period" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">2022 – Pågående</p>
+        <h3 class="tl-role" style="color:#fff;-webkit-text-fill-color:#fff;">Frontend Web Developer</h3>
+        <p class="tl-company" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Studeravidare &amp; Egna uppdrag</p>
+        <p class="tl-desc" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">
+          Utvecklar och förvaltar responsiva webbplatser och webbapplikationer från idé till lansering. Byggt LinkedIn-plattformen LinkedJobs med 8 live-sidor och 70+ dynamiska ortsidor, Tvättkliniken, Studeravidare samt två Shopify-butiker. Arbetar med moderna ramverk, CMS-plattformar, API-integrationer och fullständig teknisk SEO.
+        </p>
+        <div class="tl-chips">
+          <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">React / Next.js</span>
+          <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Vue.js / Nuxt.js</span>
+          <span class="chip chip-blue" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;border-color:rgba(79,156,249,.4);">Angular</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Node.js</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">TypeScript</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">WordPress</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Shopify</span>
+          <span class="chip chip-green" style="color:#4ade80;-webkit-text-fill-color:#4ade80;border-color:rgba(74,222,128,.4);">Brevo API</span>
+          <span class="chip chip-green" style="color:#4ade80;-webkit-text-fill-color:#4ade80;border-color:rgba(74,222,128,.4);">Zapier</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">SEO / Schema</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">GA4</span>
+        </div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-glow"></div>
+        <div class="tl-item-inner">
+        <p class="tl-period" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">2021 – 2023</p>
+        <h3 class="tl-role" style="color:#fff;-webkit-text-fill-color:#fff;">Frontend App Developer (YH-utbildning)</h3>
+        <p class="tl-company" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Changemaker Education</p>
+        <p class="tl-desc" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">
+          Tvåårig YH-utbildning i frontend- och apputveckling. Byggde egna projekt i HTML/CSS/JS, React, Vue, Angular, Node.js, Express, Java, .NET/C#, Python och SQL.
+        </p>
+        <div class="tl-chips">
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">HTML/CSS</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">JavaScript</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">TypeScript</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">React</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Vue.js</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Angular</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Node.js</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Java</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">.NET &amp; C#</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Python</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">SQL</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <span class="section-label" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">// Utbildning</span>
+    <h2 class="section-title" style="color:#fff;-webkit-text-fill-color:#fff;">Akademisk <em style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">bakgrund</em></h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <p class="edu-year" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">2021 – 2023</p>
+        <h3 class="edu-degree" style="color:#fff;-webkit-text-fill-color:#fff;">Frontend &amp; App Developer</h3>
+        <p class="edu-school" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Changemaker Education YH</p>
+        <div class="edu-chips">
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">HTML/CSS</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">JavaScript</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">TypeScript</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">React</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Vue.js</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Angular</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Node.js</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Express.js</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Java</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">.NET &amp; C#</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Python</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">SQL</span>
+        </div>
+      </div>
+      <div class="edu-card reveal">
+        <p class="edu-year" style="color:#c9a84c;-webkit-text-fill-color:#c9a84c;">Pågående</p>
+        <h3 class="edu-degree" style="color:#fff;-webkit-text-fill-color:#fff;">Självlärda tekniker</h3>
+        <p class="edu-school" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Praktisk erfarenhet &amp; egna projekt</p>
+        <div class="edu-chips">
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Shopify Liquid</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Brevo API</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">SEO</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Schema Markup</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Zapier</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Power BI</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">DKIM/DMARC</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Three.js</span>
+          <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Netlify</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <span class="section-label" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">// Kontakt</span>
+      <h2 class="section-title" style="color:#fff;-webkit-text-fill-color:#fff;">Låt oss <em style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">prata</em></h2>
+      <p class="contact-intro" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">
+        Intresserad av ett samarbete eller vill du veta mer om mina projekt? Hör av dig — jag svarar snabbt.
+      </p>
+      <div class="contact-links reveal">
+        <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#65;&#108;&#109;&#105;&#110;&#115;&#105;&#114;&#98;&#105;&#99;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="contact-link" style="color:#8a99aa;-webkit-text-fill-color:#8a99aa;text-decoration:none;">
+          <span class="contact-icon">✉️</span>
+          <span style="color:#8a99aa;-webkit-text-fill-color:#8a99aa;">Alminsirbic&#64;hotmail.com</span>
+        </a>
+        <a href="tel:0762930730" class="contact-link" style="color:#8a99aa;-webkit-text-fill-color:#8a99aa;text-decoration:none;">
+          <span class="contact-icon">📞</span>
+          <span style="color:#8a99aa;-webkit-text-fill-color:#8a99aa;">076-293 07 30</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-logo" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Almin <span style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">Sirbic</span></p>
+  <p class="footer-copy" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">&copy; 2025 &middot; Frontend Developer &middot; Göteborg</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
