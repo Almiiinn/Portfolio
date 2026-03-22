@@ -502,12 +502,9 @@ footer{
           position:relative;
           border-radius:10px;
           border:1px solid rgba(79,156,249,.25);
-          background:#07090d;
           flex-shrink:0;
         ">
-        <!-- iframe zoomed into just the hero/video area -->
         <iframe
-          id="lj-iframe"
           src="https://www.linkedjobs.se"
           title="LinkedJobs live"
           loading="lazy"
@@ -515,27 +512,26 @@ footer{
           style="
             position:absolute;
             top:0; left:0;
-            width:1440px;
-            height:900px;
+            width:800px;
+            height:1200px;
             transform-origin:top left;
-            transform:scale(0.292);
+            transform:scale(0.525);
             border:none;
             pointer-events:none;
           "
         ></iframe>
-        <!-- mask: hide everything below hero (cookie lives ~280px down scaled = ~960px real) -->
+        <!-- mask cookie banner region only (~262-446px in container coords) -->
         <div style="
             position:absolute;
-            top:280px; left:0; right:0; bottom:0;
-            background:#07090d;
-            z-index:3;pointer-events:none;
-        "></div>
-        <!-- gradient blend -->
-        <div style="
-            position:absolute;
-            top:220px; left:0; right:0; height:80px;
-            background:linear-gradient(to bottom,transparent,#07090d);
-            z-index:3;pointer-events:none;
+            top:250px; left:0; right:0; height:200px;
+            background:linear-gradient(
+              to bottom,
+              transparent 0%,
+              rgba(7,9,13,0.97) 15%,
+              rgba(7,9,13,0.97) 85%,
+              transparent 100%
+            );
+            z-index:3; pointer-events:none;
         "></div>
       </div>
  
