@@ -495,15 +495,19 @@ footer{
         <a href="https://www.linkedjobs.se" target="_blank" rel="noopener" class="feat-link" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;text-decoration:none;">Besök LinkedJobs <span>→</span></a>
       </div>
       <div style="
-          width:100%;
-          aspect-ratio:16/10;
+          width:420px;
+          max-width:100%;
+          height:580px;
           overflow:hidden;
           position:relative;
-          border-radius:8px;
-          border:1px solid rgba(79,156,249,.2);
+          border-radius:10px;
+          border:1px solid rgba(79,156,249,.25);
           background:#07090d;
+          flex-shrink:0;
         ">
+        <!-- iframe zoomed into just the hero/video area -->
         <iframe
+          id="lj-iframe"
           src="https://www.linkedjobs.se"
           title="LinkedJobs live"
           loading="lazy"
@@ -514,21 +518,22 @@ footer{
             width:1440px;
             height:900px;
             transform-origin:top left;
-            transform:scale(var(--ifscale,0.38));
+            transform:scale(0.292);
             border:none;
             pointer-events:none;
           "
         ></iframe>
-        <!-- hard mask: hides cookie banner (appears ~55% down the scaled page) -->
+        <!-- mask: hide everything below hero (cookie lives ~280px down scaled = ~960px real) -->
         <div style="
             position:absolute;
-            top:58%; left:0; right:0; bottom:0;
+            top:280px; left:0; right:0; bottom:0;
             background:#07090d;
             z-index:3;pointer-events:none;
         "></div>
+        <!-- gradient blend -->
         <div style="
             position:absolute;
-            top:44%; left:0; right:0; height:18%;
+            top:220px; left:0; right:0; height:80px;
             background:linear-gradient(to bottom,transparent,#07090d);
             z-index:3;pointer-events:none;
         "></div>
@@ -1015,22 +1020,6 @@ document.querySelectorAll('.reveal,.skill-bar-row').forEach(function(el){io.obse
     camera.aspect=W/H;camera.updateProjectionMatrix();
     renderer.setSize(W,H);
   });
-})();
- 
-// Responsive iframe scale for LinkedJobs preview
-(function(){
-  function setScale(){
-    var el = document.querySelector('[title="LinkedJobs live"]');
-    if(!el) return;
-    var container = el.parentElement;
-    var w = container.offsetWidth;
-    var scale = w / 1440;
-    el.style.transform = 'scale(' + scale + ')';
-    el.style.height = (container.offsetHeight / scale) + 'px';
-  }
-  setScale();
-  window.addEventListener('resize', setScale);
-  window.addEventListener('load', setScale);
 })();
 </script>
 </body>
