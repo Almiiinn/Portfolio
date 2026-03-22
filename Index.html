@@ -310,23 +310,52 @@ section{padding:6rem 0;}
 }
  
 /* ── EXPERIENCE ── */
-.timeline{position:relative;padding-left:2rem;}
-.timeline::before{
-  content:"";position:absolute;left:0;top:0;bottom:0;
-  width:1px;background:var(--border);
+.timeline{position:relative;padding-left:0;display:flex;flex-direction:column;gap:1.5rem;}
+.tl-item{
+  position:relative;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:2rem 2rem 2rem 2rem;
+  overflow:hidden;
+  transition:border-color .3s,transform .3s;
 }
-.tl-item{position:relative;padding:0 0 3rem 2rem;}
-.tl-item:last-child{padding-bottom:0;}
-.tl-dot{
-  position:absolute;left:-2.35rem;top:.3rem;
-  width:10px;height:10px;border-radius:50%;
-  border:2px solid #4f9cf9;background:var(--bg);
+.tl-item:hover{border-color:rgba(79,156,249,.4);transform:translateY(-2px);}
+.tl-item::before{
+  content:"";
+  position:absolute;top:0;left:0;
+  width:4px;height:100%;
+  background:linear-gradient(to bottom,#4f9cf9,rgba(79,156,249,.2));
+  border-radius:10px 0 0 10px;
 }
-.tl-period{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.12em;color:#4f9cf9;margin-bottom:.4rem;}
-.tl-role{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:#fff;margin-bottom:.2rem;}
-.tl-company{font-size:.88rem;color:#5a6a7e;margin-bottom:.8rem;}
-.tl-desc{font-size:.9rem;color:#5a6a7e;line-height:1.7;margin-bottom:1rem;}
+.tl-item-inner{padding-left:.5rem;}
+.tl-glow{
+  position:absolute;top:-60px;left:-60px;
+  width:200px;height:200px;
+  background:radial-gradient(circle,rgba(79,156,249,.07) 0%,transparent 70%);
+  pointer-events:none;
+  transition:opacity .4s;
+  opacity:0;
+}
+.tl-item:hover .tl-glow{opacity:1;}
+.tl-period{
+  font-family:var(--font-mono);font-size:.65rem;letter-spacing:.14em;
+  color:#4f9cf9;margin-bottom:.6rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(79,156,249,.08);
+  border:1px solid rgba(79,156,249,.2);
+  padding:.25rem .75rem;border-radius:20px;
+}
+.tl-period::before{content:"";width:6px;height:6px;border-radius:50%;background:#4f9cf9;animation:pulse 2s ease infinite;}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(79,156,249,.4);}50%{opacity:.7;box-shadow:0 0 0 5px rgba(79,156,249,0);}}
+.tl-role{font-family:var(--font-display);font-size:1.6rem;font-weight:400;color:#fff;margin:.6rem 0 .2rem;line-height:1.2;}
+.tl-company{font-size:.88rem;color:#5a6a7e;margin-bottom:1rem;}
+.tl-desc{font-size:.9rem;color:#5a6a7e;line-height:1.7;margin-bottom:1.2rem;}
 .tl-chips{display:flex;flex-wrap:wrap;gap:.4rem;}
+@media(max-width:640px){
+  .tl-item{padding:1.5rem 1.2rem 1.5rem 1.2rem;}
+  .tl-role{font-size:1.3rem;}
+}
  
 /* ── EDUCATION ── */
 .edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
@@ -776,7 +805,8 @@ footer{
     <h2 class="section-title" style="color:#fff;-webkit-text-fill-color:#fff;">Vad jag <em style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">gjort</em></h2>
     <div class="timeline">
       <div class="tl-item reveal">
-        <div class="tl-dot"></div>
+        <div class="tl-glow"></div>
+        <div class="tl-item-inner">
         <p class="tl-period" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">2022 – Pågående</p>
         <h3 class="tl-role" style="color:#fff;-webkit-text-fill-color:#fff;">Frontend Web Developer</h3>
         <p class="tl-company" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Studeravidare &amp; Egna uppdrag</p>
@@ -796,9 +826,11 @@ footer{
           <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">SEO / Schema</span>
           <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">GA4</span>
         </div>
+        </div>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-dot"></div>
+        <div class="tl-glow"></div>
+        <div class="tl-item-inner">
         <p class="tl-period" style="color:#4f9cf9;-webkit-text-fill-color:#4f9cf9;">2021 – 2023</p>
         <h3 class="tl-role" style="color:#fff;-webkit-text-fill-color:#fff;">Frontend App Developer (YH-utbildning)</h3>
         <p class="tl-company" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Changemaker Education</p>
@@ -817,6 +849,7 @@ footer{
           <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">.NET &amp; C#</span>
           <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">Python</span>
           <span class="chip" style="color:#5a6a7e;-webkit-text-fill-color:#5a6a7e;">SQL</span>
+        </div>
         </div>
       </div>
     </div>
